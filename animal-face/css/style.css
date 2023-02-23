@@ -7,6 +7,15 @@ body {
 
 p,
 h1 {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 700;
   margin-bottom: 0;
 }
 
@@ -123,7 +132,12 @@ h1 {
 
 .file-upload-content {
   display: none;
+  width: 80%;
   text-align: center;
+  justify-content: center;
+  background-color: white;
+  padding: 5%;
+  border-radius: 5%;
 }
 
 .fa-image {
@@ -226,6 +240,27 @@ h1 {
   --border-color: #1f164d;
 }
 
+/* 결과 막대기 */
+.label-container-box {
+  margin-bottom: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.label-container {
+  width: 200px;
+  margin: 2%;
+}
+
+.label-container-graph-box {
+  width: 80%;
+  background-color: #15824b;
+}
+
+.label-container-graphclass p {
+  background-color: #b02818;
+  margin: 2%;
+}
 /* 댓글창 */
 #disqus_thread {
   padding: 5%;
