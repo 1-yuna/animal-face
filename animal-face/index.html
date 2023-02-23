@@ -28,8 +28,12 @@
           <p>성별을 선택하세요</p>
         </div>
         <div class="testpage-button-box">
-          <button class="testpage-button">여자</button>
-          <button class="testpage-button">남자</button>
+          <div class="wrap">
+            <button class="button">woman</button>
+          </div>
+          <div class="wrap">
+            <button class="button">man</button>
+          </div>
         </div>
 
         <script
@@ -118,7 +122,6 @@
           };
           reader.readAsDataURL(input.files[0]);
           init().then(() => {
-            console.log("hello");
             predict();
           });
         } else {
