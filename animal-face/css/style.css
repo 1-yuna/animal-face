@@ -8,8 +8,6 @@ body {
 p,
 h1 {
   font-family: "Noto Sans KR", sans-serif;
-  font-size: 13px;
-  font-weight: 700;
   margin-bottom: 0;
 }
 
@@ -255,9 +253,13 @@ h2 {
   height: 20px;
   margin: 10px 0;
   box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
 }
 .label {
   width: 80px;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .graph-container-box {
@@ -273,6 +275,9 @@ h2 {
 }
 
 .percent {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
 }
 /* 댓글창 */
 #disqus_thread {
