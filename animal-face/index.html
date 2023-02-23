@@ -55,14 +55,22 @@
             </div>
           </div>
           <div class="file-upload-content">
+            <h2 class="result-messege"></h2>
             <img
               class="file-upload-image"
               id="face-image"
               src="#"
               alt="your image"
             />
-            <p class="result-messege"></p>
-            <div id="label-container"></div>
+            <div class="label-container-box">
+              <div id="label-container"></div>
+              <div class="label-container-graph-box">
+                <div
+                  class="label-container-graphclass"
+                  id="label-container-graph"
+                ></div>
+              </div>
+            </div>
             <div class="image-title-wrap">
               <button
                 type="button"
@@ -150,7 +158,7 @@
       // the link to your model provided by Teachable Machine export panel
       const URL = "https://teachablemachine.withgoogle.com/models/zdgBA1Kr2/";
 
-      let model, webcam, labelContainer, maxPredictions;
+      let model, webcam, labelContainer, maxPredictions, labelContainerGraph;
 
       // Load the image model and setup the webcam
       async function init() {
@@ -165,9 +173,12 @@
         maxPredictions = model.getTotalClasses();
 
         labelContainer = document.getElementById("label-container");
+        labelContainerGraph = document.getElementById("label-container-graph");
+
         for (let i = 0; i < maxPredictions; i++) {
           // and class labels
-          labelContainer.appendChild(document.createElement("div"));
+          labelContainer.appendChild(document.createElement("p"));
+          labelContainerGraph.appendChild(document.createElement("p"));
         }
       }
 
@@ -201,12 +212,29 @@
         $(".result-messege").html(resultMessege);
 
         for (let i = 0; i < maxPredictions; i++) {
-          const classPrediction =
-            prediction[i].className +
-            ": " +
-            prediction[i].probability.toFixed(2);
+          const classPrediction = prediction[i].className;
           labelContainer.childNodes[i].innerHTML = classPrediction;
         }
+
+        for (let i = 0; i < maxPredictions; i++) {
+          const classPredictionGraph =
+            prediction[i].probability.toFixed(2) * 100;
+          labelContainerGraph.childNodes[i].innerHTML = classPredictionGraph;
+        }
+
+        var listchild = labelContainerGraph.children;
+        for (let i = 0; i < maxPredictions; i++) {
+          listchild[i].style.width =
+            prediction[i].probability.toFixed(2) * 100 + "%";
+        }
+
+        // for (let i = 0; i < maxPredictions; i++) {
+        //   const classPrediction =
+        //     prediction[i].className +
+        //     ": " +
+        //     prediction[i].probability.toFixed(2);
+        //   labelContainer.childNodes[i].innerHTML = classPrediction;
+        // }
       }
     </script>
 
