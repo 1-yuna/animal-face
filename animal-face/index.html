@@ -130,9 +130,43 @@
       }
 
       function removeUpload() {
+        const labelContainer = document.getElementById(
+          "labelgraph-container-box"
+        );
+        const labelgraphContainer = document.getElementById(
+          "labelgraph-container"
+        );
+        const label = document.getElementById("label");
+        const graphContainerBox = document.getElementById(
+          "graph-container-box"
+        );
+        const graph = document.getElementById("graph");
+        const percent = document.getElementById("percent");
+
+        toDos = toDos.filter((toDo) => toDo.id !== parseInt(percent.id));
+        toDos = toDos.filter((toDo) => toDo.id !== parseInt(graph.id));
+        toDos = toDos.filter(
+          (toDo) => toDo.id !== parseInt(graphContainerBox.id)
+        );
+        toDos = toDos.filter((toDo) => toDo.id !== parseInt(label.id));
+        toDos = toDos.filter(
+          (toDo) => toDo.id !== parseInt(labelgraphContainer.id)
+        );
+
+        percent.remove();
+        graph.remove();
+        graphContainerBox.remove();
+        label.remove();
+        labelgraphContainer.remove();
+
         $(".file-upload-input").replaceWith($(".file-upload-input").clone());
         $(".file-upload-content").hide();
         $(".image-upload-wrap").show();
+        const parent = document.querySelector("labelgraph-container-box");
+        while (parent.hasChildNodes()) {
+          // 부모노드가 자식이 있는지 여부를 알아낸다
+          parent.removeChild(parent.firstChild);
+        }
       }
       $(".image-upload-wrap").bind("dragover", function () {
         $(".image-upload-wrap").addClass("image-dropping");
