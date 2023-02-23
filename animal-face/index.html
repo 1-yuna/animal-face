@@ -62,15 +62,7 @@
               src="#"
               alt="your image"
             />
-            <div class="label-container-box">
-              <div id="label-container"></div>
-              <div class="label-container-graph-box">
-                <div
-                  class="label-container-graphclass"
-                  id="label-container-graph"
-                ></div>
-              </div>
-            </div>
+            <div id="labelgraph-container-box"></div>
             <div class="image-title-wrap">
               <button
                 type="button"
@@ -158,7 +150,7 @@
       // the link to your model provided by Teachable Machine export panel
       const URL = "https://teachablemachine.withgoogle.com/models/zdgBA1Kr2/";
 
-      let model, webcam, labelContainer, maxPredictions, labelContainerGraph;
+      let model, webcam, labelContainer, maxPredictions;
 
       // Load the image model and setup the webcam
       async function init() {
@@ -172,14 +164,7 @@
         model = await tmImage.load(modelURL, metadataURL);
         maxPredictions = model.getTotalClasses();
 
-        labelContainer = document.getElementById("label-container");
-        labelContainerGraph = document.getElementById("label-container-graph");
-
-        for (let i = 0; i < maxPredictions; i++) {
-          // and class labels
-          labelContainer.appendChild(document.createElement("p"));
-          labelContainerGraph.appendChild(document.createElement("p"));
-        }
+        labelContainer = document.getElementById("labelgraph-container-box");
       }
 
       // run the webcam image through the image model
@@ -212,29 +197,33 @@
         $(".result-messege").html(resultMessege);
 
         for (let i = 0; i < maxPredictions; i++) {
-          const classPrediction = prediction[i].className;
-          labelContainer.childNodes[i].innerHTML = classPrediction;
-        }
+          const labelgraphContainer = document.createElement("div");
+          const label = document.createElement("span");
+          const graphContainerBox = document.createElement("div");
+          const graph = document.createElement("div");
+          const percent = document.createElement("div");
 
-        for (let i = 0; i < maxPredictions; i++) {
+          labelgraphContainer.className = "labelgraph-container";
+          label.className = "label";
+          graphContainerBox.className = "graph-container-box";
+          graph.className = "graph";
+          percent.className = "percent";
+
+          graphContainerBox.appendChild(graph);
+          labelgraphContainer.appendChild(label);
+          labelgraphContainer.appendChild(graphContainerBox);
+          labelgraphContainer.appendChild(percent);
+          labelContainer.appendChild(labelgraphContainer);
+          console.log(labelgraphContainer);
+
+          const classPrediction = prediction[i].className;
+          label.innerText = classPrediction;
+
           const classPredictionGraph =
             prediction[i].probability.toFixed(2) * 100;
-          labelContainerGraph.childNodes[i].innerHTML = classPredictionGraph;
+          percent.innerText = classPredictionGraph + "%";
+          graph.style.width = classPredictionGraph + "%";
         }
-
-        var listchild = labelContainerGraph.children;
-        for (let i = 0; i < maxPredictions; i++) {
-          listchild[i].style.width =
-            prediction[i].probability.toFixed(2) * 100 + "%";
-        }
-
-        // for (let i = 0; i < maxPredictions; i++) {
-        //   const classPrediction =
-        //     prediction[i].className +
-        //     ": " +
-        //     prediction[i].probability.toFixed(2);
-        //   labelContainer.childNodes[i].innerHTML = classPrediction;
-        // }
       }
     </script>
 
