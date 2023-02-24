@@ -31,6 +31,7 @@ h2 {
   border-bottom-left-radius: 45px;
   border-bottom-right-radius: 45px;
   box-shadow: 2px 2px 20px black;
+  margin-bottom: 100px;
 }
 
 /* testpage */
@@ -201,10 +202,11 @@ h2 {
 }
 
 .file-upload-image {
-  max-height: 200px;
-  max-width: 200px;
+  max-height: 50%;
+  max-width: 50%;
   margin: auto;
   padding: 20px;
+  margin: 5% 0;
 }
 
 .remove-image {
