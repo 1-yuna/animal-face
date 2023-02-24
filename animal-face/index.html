@@ -62,6 +62,11 @@
               src="#"
               alt="your image"
             />
+            <div class="roding d-flex justify-content-center">
+              <div class="roding spinner-border" role="status">
+                <span class="roding sr-only">Loading...</span>
+              </div>
+            </div>
             <p class="result-comment"></p>
             <div id="labelgraph-container-box"></div>
             <div class="image-title-wrap">
@@ -291,6 +296,7 @@
             graph.style.backgroundColor = "#0DAEDF";
           }
         }
+        $(".roding").hide();
       }
     </script>
 
