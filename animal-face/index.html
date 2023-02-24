@@ -62,6 +62,7 @@
               src="#"
               alt="your image"
             />
+            <p class="result-comment"></p>
             <div id="labelgraph-container-box"></div>
             <div class="image-title-wrap">
               <button
@@ -69,7 +70,7 @@
                 onclick="removeUpload()"
                 class="remove-image"
               >
-                Remove
+                다른 사진으로 재시도
               </button>
             </div>
           </div>
@@ -130,43 +131,39 @@
       }
 
       function removeUpload() {
-        const labelContainer = document.getElementById(
-          "labelgraph-container-box"
-        );
-        const labelgraphContainer = document.getElementById(
-          "labelgraph-container"
-        );
-        const label = document.getElementById("label");
-        const graphContainerBox = document.getElementById(
-          "graph-container-box"
-        );
-        const graph = document.getElementById("graph");
-        const percent = document.getElementById("percent");
+        // const labelContainer = document.getElementById(
+        //   "labelgraph-container-box"
+        // );
+        // const labelgraphContainer = document.getElementById(
+        //   "labelgraph-container"
+        // );
+        // const label = document.getElementById("label");
+        // const graphContainerBox = document.getElementById(
+        //   "graph-container-box"
+        // );
+        // const graph = document.getElementById("graph");
+        // const percent = document.getElementById("percent");
 
-        toDos = toDos.filter((toDo) => toDo.id !== parseInt(percent.id));
-        toDos = toDos.filter((toDo) => toDo.id !== parseInt(graph.id));
-        toDos = toDos.filter(
-          (toDo) => toDo.id !== parseInt(graphContainerBox.id)
-        );
-        toDos = toDos.filter((toDo) => toDo.id !== parseInt(label.id));
-        toDos = toDos.filter(
-          (toDo) => toDo.id !== parseInt(labelgraphContainer.id)
-        );
+        // toDos = toDos.filter((toDo) => toDo.id !== parseInt(percent.id));
+        // toDos = toDos.filter((toDo) => toDo.id !== parseInt(graph.id));
+        // toDos = toDos.filter(
+        //   (toDo) => toDo.id !== parseInt(graphContainerBox.id)
+        // );
+        // toDos = toDos.filter((toDo) => toDo.id !== parseInt(label.id));
+        // toDos = toDos.filter(
+        //   (toDo) => toDo.id !== parseInt(labelgraphContainer.id)
+        // );
 
-        percent.remove();
-        graph.remove();
-        graphContainerBox.remove();
-        label.remove();
-        labelgraphContainer.remove();
+        // percent.remove();
+        // graph.remove();
+        // graphContainerBox.remove();
+        // label.remove();
+        // labelgraphContainer.remove();
+        window.location.reload();
 
-        $(".file-upload-input").replaceWith($(".file-upload-input").clone());
-        $(".file-upload-content").hide();
-        $(".image-upload-wrap").show();
-        const parent = document.querySelector("labelgraph-container-box");
-        while (parent.hasChildNodes()) {
-          // 부모노드가 자식이 있는지 여부를 알아낸다
-          parent.removeChild(parent.firstChild);
-        }
+        // $(".file-upload-input").replaceWith($(".file-upload-input").clone());
+        // $(".file-upload-content").hide();
+        // $(".image-upload-wrap").show();
       }
       $(".image-upload-wrap").bind("dragover", function () {
         $(".image-upload-wrap").addClass("image-dropping");
@@ -211,24 +208,43 @@
         );
 
         var resultMessege;
+        var resultMessegeColor;
+        var resultComment;
         switch (prediction[0].className) {
           case "강아지상":
-            resultMessege = "강아지상";
+            resultMessege = "귀여운 순둥이 강아지상";
+            resultMessegeColor = "#30839A";
+            resultComment =
+              "다정다감하고 귀여운 당신은 모든 사람들에게 즐거움을 주는 호감형이다! 상냥하고 활발한 성격으로 어디에서도 인기폭팔이지만, 애교와 웃음이 많아 연인에게 특히나 사랑스럽다 야옹";
             break;
           case "고양이상":
-            resultMessege = "고양이상";
+            resultMessege = "츤데레 매력쟁이 고양이상";
+            resultMessegeColor = "#F8B039";
+            resultComment =
+              "도도한 인상을 가진 당신은 첫인상은 차가워 보이지만 묘한 매력을 풍겨 언제나 인기가 넘친다. 시크한 츤데레로 연인에게 끊임없이 설렘을 주는 당신은 고양이와 닮았다! 멍멍 월월월";
             break;
           case "사슴상":
-            resultMessege = "사슴상";
+            resultMessege = "온순하고 우아한 사슴상";
+            resultMessegeColor = "#71CF4F";
+            resultComment =
+              "맑고 영롱한 분위기의 당신은 사슴처럼 차분한 성격의 소유자다. 초롱초롱한 눈망울이 당신의 가장 큰 트레이드마크며 따스하고 온순한 눈빛을 가져 사랑스러움을 항상 머금고 있다. ";
             break;
           case "토끼상":
-            resultMessege = "토끼상";
+            resultMessege = "상큼발랄한 매력의 토끼상";
+            resultMessegeColor = "#E3AAC0";
+            resultComment =
+              "발랄하고 귀여운 당신은 주변 사람들에게 기쁨을 주는 행복 바이러스다! 호기심이 많아 활발하며 귀엽고 순수한 외모로 연인의 보호본능을 자극한다. 으악 오글거려";
             break;
           case "꼬부기상":
-            resultMessege = "꼬부기상";
+            resultMessege = "싱글벙글 귀여운 꼬부기상";
+            resultMessegeColor = "#0DAEDF";
+            resultComment =
+              "항상 맑은 미소를 가지고 있는 당신은 주변 사람들에게 항상 웃음을 주는 행복 바이러스다! 보기보다 섬세하며 다른 사람들의 마을을 먼저 헤아릴 줄 아는 진정한 하 몰라.. 꼬부기 닮아서 부럽당 ";
             break;
         }
         $(".result-messege").html(resultMessege);
+        $(".result-messege").css("color", resultMessegeColor);
+        $(".result-comment").html(resultComment);
 
         for (let i = 0; i < maxPredictions; i++) {
           const labelgraphContainer = document.createElement("div");
@@ -257,6 +273,23 @@
             prediction[i].probability.toFixed(2) * 100;
           percent.innerText = classPredictionGraph + "%";
           graph.style.width = classPredictionGraph + "%";
+
+          if (prediction[i].className == "강아지상") {
+            graphContainerBox.style.backgroundColor = "#CEDFE6";
+            graph.style.backgroundColor = "#30839A";
+          } else if (prediction[i].className == "고양이상") {
+            graphContainerBox.style.backgroundColor = "#F4EAD4";
+            graph.style.backgroundColor = "#F8B039";
+          } else if (prediction[i].className == "토끼상") {
+            graphContainerBox.style.backgroundColor = "#F5E4EF";
+            graph.style.backgroundColor = "#E3AAC0";
+          } else if (prediction[i].className == "사슴상") {
+            graphContainerBox.style.backgroundColor = "#DBEDDA";
+            graph.style.backgroundColor = "#71CF4F";
+          } else if (prediction[i].className == "꼬부기상") {
+            graphContainerBox.style.backgroundColor = "#CEE7F7";
+            graph.style.backgroundColor = "#0DAEDF";
+          }
         }
       }
     </script>
