@@ -33,3 +33,8 @@
 #         urllib.request.urlretrieve(imgUrl, nameP +"/"+ str(count) + ".jpg")
 #         count = count + 1
 
+
+
+#"https://teachablemachine.withgoogle.com/models/zdgBA1Kr2/"
+#https://teachablemachine.withgoogle.com/models/fui48JDgt/
+# https://teachablemachine.withgoogle.com/models/edGx6xXF3/
