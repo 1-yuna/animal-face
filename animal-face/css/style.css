@@ -17,21 +17,25 @@ h2 {
   margin-bottom: 0;
 }
 
-.body-2 {
-  background-color: rgb(255, 241, 244);
+#body-2 {
+  background-color: #f1f1f7;
   padding-bottom: 10%;
   border-bottom-left-radius: 45px;
   border-bottom-right-radius: 45px;
   box-shadow: 2px 2px 20px black;
 }
 
-.body-1 {
-  background-color: pink;
+#body-1 {
+  background-color: var(--base-color);
   padding-bottom: 15%;
   border-bottom-left-radius: 45px;
   border-bottom-right-radius: 45px;
   box-shadow: 2px 2px 20px black;
   margin-bottom: 100px;
+}
+
+.body-1color {
+  background-color: blue;
 }
 
 /* testpage */
@@ -45,15 +49,25 @@ h2 {
   padding: 10% 10% 5% 10%;
 }
 
-.testpage-top-box h1 {
+#testpage-top-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 5%;
-  font-size: 40px;
-  font-weight: 700;
   background-color: white;
   padding: 30px 10%;
-  border: 4px dashed pink;
+
+  border: 4px dashed var(--base-color);
   border-radius: 5%;
-  color: pink;
+  color: var(--base-color);
+}
+
+.testpage-top-box h1 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 2%;
+  /* color: pink; */
 }
 
 .testpage-top-box p {
@@ -90,7 +104,7 @@ h2 {
   background-color: #fff;
   border: none;
   border-radius: 45px;
-  box-shadow: 0px 8px 15px pink;
+  box-shadow: 0px 8px 15px var(--base-color);
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
@@ -98,8 +112,9 @@ h2 {
 }
 
 .button:hover {
-  background-color: pink;
-  box-shadow: 0px 15px 20px palevioletred;
+  background-color: var(--base-color);
+  box-shadow: 0px 15px 20px var(--border-color);
+
   color: #fff;
   transform: translateY(-7px);
 }
@@ -237,10 +252,6 @@ h2 {
   transition: all 0.2s ease;
 }
 
-:root {
-  --border-color: #1f164d;
-}
-
 /* 그래프 */
 #labelgraph-container-box {
   display: flex;
@@ -301,4 +312,10 @@ h2 {
 /* 댓글창 */
 #disqus_thread {
   padding: 5%;
+}
+
+:root {
+  --border-color: #1f164d;
+  --base-color: #797dbf99;
+  --blue-color: #7e9ef7;
 }
