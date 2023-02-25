@@ -38,4 +38,32 @@ https://teachablemachine.withgoogle.com/models/edGx6xXF3/
 https://teachablemachine.withgoogle.com/models/gbhu2b5G4/
 
 남자
-https://teachablemachine.withgoogle.com/models/l7So9pdis/ -->
+https://teachablemachine.withgoogle.com/models/l7So9pdis/
+
+
+여자
+바디2 #fff1f4
+바디1 pink
+
+testpage-top-box h1
+테두리, 글자 pink
+
+.button
+box-shadow pink
+
+.button:hover {
+  background-color: pink;
+  box-shadow: 0px 15px 20px palevioletred;
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.remove-image
+background: rgb(255, 232, 237);
+  border: none;
+  padding: 10px;
+  border-radius: 45px;
+  border-bottom: 4px solid pink;
+  transition: all 0.2s ease;
+
+-->
