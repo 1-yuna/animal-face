@@ -70,19 +70,21 @@ h2 {
   /* color: pink; */
 }
 
-.testpage-top-box p {
+.removw-p-button-box {
+  margin-top: 10%;
+}
+.test-p {
   font-size: 15px;
   font-weight: 700;
+  text-align: center;
 }
 
-.testpage-top-box p:last-child {
-  margin-top: 15%;
-}
 .testpage-button-box {
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: center;
+  margin-top: 5%;
 }
 
 .wrap {
