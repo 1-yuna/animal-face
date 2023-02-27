@@ -43,30 +43,30 @@ function colorChange() {
     document.getElementById("testpage-top-text").style.borderColor = "pink";
     button1.style.boxShadow = "0px 8px 15px pink";
     button2.style.boxShadow = "0px 8px 15px pink";
-    $(button1).hover(
-      function () {
-        $(this).css("background-color", "pink");
-      },
-      function () {
-        $(this).css("background-color", "white");
-      }
-    );
-    $(button1).hover(
-      function () {
-        $(this).css("box-shadow", "0px 15px 20px palevioletred");
-      },
-      function () {
-        $(this).css("box-shadow", "0px 8px 15px pink");
-      }
-    );
-    $(button2).hover(
-      function () {
-        $(this).css("background-color", "pink");
-      },
-      function () {
-        $(this).css("background-color", "white");
-      }
-    );
+    // $(button1).hover(
+    //   function () {
+    //     $(this).css("background-color", "pink");
+    //   },
+    //   function () {
+    //     $(this).css("background-color", "white");
+    //   }
+    // );
+    // $(button1).hover(
+    //   function () {
+    //     $(this).css("box-shadow", "0px 15px 20px palevioletred");
+    //   },
+    //   function () {
+    //     $(this).css("box-shadow", "0px 8px 15px pink");
+    //   }
+    // );
+    // $(button2).hover(
+    //   function () {
+    //     $(this).css("background-color", "pink");
+    //   },
+    //   function () {
+    //     $(this).css("background-color", "white");
+    //   }
+    // );
   } else if (localStorage.getItem("number") == 2) {
     document.getElementById("body-1").style.backgroundColor =
       "var(--blue-color)";
@@ -78,30 +78,30 @@ function colorChange() {
     button1.style.boxShadow = "0px 8px 15px var(--blue-color)";
     button2.style.boxShadow = "0px 8px 15px var(--blue-color)";
 
-    $(button1).hover(
-      function () {
-        $(this).css("background-color", "var(--blue-color)");
-      },
-      function () {
-        $(this).css("background-color", "white");
-      }
-    );
-    $(button1).hover(
-      function () {
-        $(this).css("box-shadow", "0px 15px 20px var(--border-color)");
-      },
-      function () {
-        $(this).css("box-shadow", "0px 8px 15px var(--blue-color)");
-      }
-    );
-    $(button2).hover(
-      function () {
-        $(this).css("background-color", "var(--blue-color)");
-      },
-      function () {
-        $(this).css("background-color", "white");
-      }
-    );
+    // $(button1).hover(
+    //   function () {
+    //     $(this).css("background-color", "var(--blue-color)");
+    //   },
+    //   function () {
+    //     $(this).css("background-color", "white");
+    //   }
+    // );
+    // $(button1).hover(
+    //   function () {
+    //     $(this).css("box-shadow", "0px 15px 20px var(--border-color)");
+    //   },
+    //   function () {
+    //     $(this).css("box-shadow", "0px 8px 15px var(--blue-color)");
+    //   }
+    // );
+    // $(button2).hover(
+    //   function () {
+    //     $(this).css("background-color", "var(--blue-color)");
+    //   },
+    //   function () {
+    //     $(this).css("background-color", "white");
+    //   }
+    // );
     document.querySelector(".remove-image").style.backgroundColor = "#eff4ff";
     document.querySelector(".remove-image").style.borderBottomColor =
       "var(--blue-color)";
@@ -123,30 +123,30 @@ function colorChange() {
       "var(--base-color)";
     button1.style.boxShadow = "0px 8px 15px var(--base-color)";
     button2.style.boxShadow = "0px 8px 15px var(--base-color)";
-    $(button1).hover(
-      function () {
-        $(this).css("background-color", "var(--base-color)");
-      },
-      function () {
-        $(this).css("background-color", "white");
-      }
-    );
-    $(button1).hover(
-      function () {
-        $(this).css("box-shadow", "0px 15px 20px var(--border-color)");
-      },
-      function () {
-        $(this).css("box-shadow", "0px 8px 15px var(--base-color)");
-      }
-    );
-    $(button2).hover(
-      function () {
-        $(this).css("background-color", "var(--base-color)");
-      },
-      function () {
-        $(this).css("background-color", "white");
-      }
-    );
+    //   $(button1).hover(
+    //     function () {
+    //       $(this).css("background-color", "var(--base-color)");
+    //     },
+    //     function () {
+    //       $(this).css("background-color", "white");
+    //     }
+    //   );
+    //   $(button1).hover(
+    //     function () {
+    //       $(this).css("box-shadow", "0px 15px 20px var(--border-color)");
+    //     },
+    //     function () {
+    //       $(this).css("box-shadow", "0px 8px 15px var(--base-color)");
+    //     }
+    //   );
+    //   $(button2).hover(
+    //     function () {
+    //       $(this).css("background-color", "var(--base-color)");
+    //     },
+    //     function () {
+    //       $(this).css("background-color", "white");
+    //     }
+    //   );
   }
 }
 
