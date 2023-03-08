@@ -6,7 +6,7 @@ function kakaoShare() {
     content: {
       title: "동물상 테스트",
       description: "나와 닮은 동물상은 무엇일까?",
-      imageUrl: "animal.jpg",
+      imageUrl: "animal.png",
       link: {
         mobileWebUrl: "https://developers.kakao.com",
         webUrl: "https://developers.kakao.com",
