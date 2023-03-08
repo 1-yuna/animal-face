@@ -47,6 +47,7 @@ h2 {
 
 .kakao-btn {
   height: 42px;
+  width: 42px;
   border-radius: 45px;
   margin: 0 5px;
   position: relative;
@@ -222,11 +223,6 @@ h2 {
   background-color: #00000049;
   border: 3px dashed #ffffff;
 }
-
-/* .image-title-wrap {
-  padding: 0 15px 15px 15px;
-  color: #222;
-} */
 
 .drag-text {
   margin: 10% 5%;
